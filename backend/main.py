@@ -15,6 +15,7 @@ app.add_middleware(
         "http://localhost:3000",
         "https://freevideowatermarkremover.vercel.app",
         "https://*.vercel.app",
+        "https://*.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],

@@ -289,12 +289,13 @@ export default function Home() {
       form.append("w", String(region.w)); form.append("h", String(region.h));
     }
     try {
-      const res = await fetch(`http://localhost:8000/api/${activeTab}s/remove`, { method: "POST", body: form });
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const res = await fetch(`${apiBase}/api/${activeTab}s/remove`, { method: "POST", body: form });
       const resText = await res.text();
       let data;
       try { data = JSON.parse(resText); } catch { throw new Error(resText || `Server error (${res.status})`); }
       if (!res.ok) throw new Error(data.detail || "Something went wrong");
-      setResultUrl(`http://localhost:8000${data.output_url}`);
+      setResultUrl(`${apiBase}${data.output_url}`);
     } catch (err) { setError(err.message); }
     finally { setLoading(false); }
   };
