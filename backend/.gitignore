@@ -4,5 +4,9 @@ uploads/*
 outputs/*
 !uploads/.gitkeep
 !outputs/.gitkeep
+*.mp4
+*.png
+*.jpg
+*.wav
 .env
 .vercel

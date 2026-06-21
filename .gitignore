@@ -20,6 +20,13 @@
 # production
 /build
 
+# backend
+backend/uploads/*
+backend/outputs/*
+backend/*.mp4
+backend/*.png
+backend/*.jpg
+
 # misc
 .DS_Store
 *.pem
